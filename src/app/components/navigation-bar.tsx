@@ -147,7 +147,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="bg-black fixed top-0 w-full"
+      className="bg-black sticky top-0 w-full"
       style={{
         borderBottom: "1px solid #1f1f1f",
       }}

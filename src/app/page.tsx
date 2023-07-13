@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/navigation-bar";
 import Head from "next/head";
+import UniverseSection from "./components/main/universe-section";
 
 export default function Home() {
   return (
@@ -12,9 +13,7 @@ export default function Home() {
         />
       </Head>
       <Navbar />
-      <section className="container pt-24 text-white px-6 md:px-auto">
-        <h1>Hello</h1>
-      </section>
+      <UniverseSection />
     </main>
   );
 }
