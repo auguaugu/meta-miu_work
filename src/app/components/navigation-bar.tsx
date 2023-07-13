@@ -147,7 +147,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="bg-black sticky top-0 w-full"
+      className="bg-black z-50 sticky top-0 w-full"
       style={{
         borderBottom: "1px solid #1f1f1f",
       }}
@@ -234,7 +234,7 @@ const Navbar = () => {
             >
               <InstagramIcon />
             </Link>
-            <Link className="p-4" href="https://www.fellaz.io/" target="_blank">
+            <Link className="p-4" href="https://fellaz.io/" target="_blank">
               <FellazIcon />
             </Link>
           </div>
