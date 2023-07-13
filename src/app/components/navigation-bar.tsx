@@ -2,6 +2,10 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import TwitterIcon from "../icons/twitter-icon";
+import InstagramIcon from "../icons/instagram-icon";
+import FellazIcon from "../icons/fellaz-icon";
+import Image from "next/image";
 
 const NavItem = ({ href, label }: { href: string; label: string }) => (
   <Link
@@ -12,9 +16,134 @@ const NavItem = ({ href, label }: { href: string; label: string }) => (
   </Link>
 );
 
+const LinkItem = ({
+  className,
+  content,
+  style,
+}: {
+  className?: string;
+  content: string;
+  style: React.StyleHTMLAttributes<HTMLAnchorElement>;
+}) => {
+  return (
+    <li className={className} style={style}>
+      <a href={`#${content}`}>
+        {content.charAt(0).toUpperCase() + content.slice(1)}
+      </a>
+    </li>
+  );
+};
+
+const Drawer = ({
+  isOpen,
+  closeDrawer,
+  selected = "universe",
+}: {
+  isOpen: boolean;
+  closeDrawer: () => void;
+  selected?: "universe" | "story" | "features";
+}) => {
+  return (
+    <div
+      className={`fixed inset-0 z-50 overflow-hidden flex justify-end ${
+        isOpen ? "" : "pointer-events-none"
+      }`}
+    >
+      <div
+        onClick={closeDrawer}
+        className="fixed inset-0 transition-opacity ease-in-out duration-500"
+      />
+      <div
+        style={{
+          backgroundColor: "#0F0F0F",
+        }}
+        className={`relative ml-10 w-full transition-transform ease-in-out duration-500 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          onClick={closeDrawer}
+          className="absolute top-0 right-0 mt-6 mr-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+            className="h-6 w-6 text-gray-600 hover:text-gray-800"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <div className="flex text-white flex-col h-full">
+          <div className="flex-1 p-6 flex items-center">
+            <ul className="font-semibold">
+              <li
+                className="mb-8"
+                style={{
+                  color: selected === "universe" ? "#CB00CE" : "#FFFFFF",
+                }}
+              >
+                <a href="#universe">Universe</a>
+              </li>
+              <li
+                className="mb-8"
+                style={{
+                  color: selected === "story" ? "#CB00CE" : "#FFFFFF",
+                }}
+              >
+                <a href="#story">Story</a>
+              </li>
+              <li
+                className=""
+                style={{
+                  color: selected === "features" ? "#CB00CE" : "#FFFFFF",
+                }}
+              >
+                <a href="#features">Features</a>
+              </li>
+            </ul>
+          </div>
+          <div className="py-10 px-6 border-gray-700 border-t border-solid">
+            <h1 className="font-extrabold text-2xl mb-6">META MIU</h1>
+            <h6 className="text-stone-400 mb-6 text-xs">
+              © Innocus Pte. Ltd. All rights reserved.
+            </h6>
+            <div className="flex flex-row gap-6">
+              <Link
+                className=""
+                href="https://twitter.com/Meta_Miu_?s=20"
+                target="_blank"
+              >
+                <Image
+                  src="/assets/images/twitter-icon-big.png"
+                  width={32}
+                  height={32}
+                  alt="Twitter link"
+                />
+              </Link>
+              <Link
+                className=""
+                href="https://www.instagram.com/meta_miu/?igshid=MmIzYWVlNDQ5Yg%3D%3D"
+                target="_blank"
+              >
+                <InstagramIcon />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Navbar = () => {
-  // const [open, setOpen] = useState(false);
-  // const { asPath } = useRouter();
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <div
@@ -24,20 +153,22 @@ const Navbar = () => {
       }}
     >
       <nav className="md:px-14 px-6">
-        <div className="flex flex-wrap items-center justify-between h-24">
+        <div className="flex flex-wrap items-center justify-between md:h-24 h-16">
           <a href="#" className="flex items-center">
-            <span className="text-white self-center text-4xl font-extrabold whitespace-nowrap">
+            <span className="text-white self-center text-sm md:text-4xl font-extrabold whitespace-nowrap">
               META MIU
             </span>
           </a>
           <button
+            onClick={() => {
+              setDrawerOpen(!isDrawerOpen);
+            }}
             data-collapse-toggle="navbar-solid-bg"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-100 rounded-lg md:hidden hover:bg-gray-900 focus:outline-none focus:ring-2"
             aria-controls="navbar-solid-bg"
             aria-expanded="false"
           >
-            <span className="sr-only">Open main menu</span>
             <svg
               className="w-5 h-5"
               aria-hidden="true"
@@ -47,9 +178,9 @@ const Navbar = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
@@ -88,22 +219,33 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="hidden md:block">
-            <svg
-              width="57"
-              height="57"
-              viewBox="0 0 57 57"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="hidden md:flex flex-row gap-2">
+            <Link
+              className="p-4"
+              href="https://twitter.com/Meta_Miu_?s=20"
+              target="_blank"
             >
-              <path
-                d="M17.06 38.6729C15.4612 36.3218 15.9583 33.1108 17.9736 31.0956L21.9101 27.1591C22.6087 26.4605 22.6087 25.3051 21.9101 24.6065C21.2114 23.9078 20.056 23.9078 19.3574 24.6065L15.5553 28.4086C12.0487 31.9151 11.4845 37.6116 14.6417 41.4406C18.2557 45.8338 24.7717 46.0622 28.6947 42.1392L32.7924 38.0415C33.491 37.3429 33.491 36.1875 32.7924 35.4888C32.0938 34.7902 30.9384 34.7902 30.2398 35.4888L26.1421 39.5865C23.576 42.1526 19.2096 41.8436 17.06 38.6729ZM26.0077 34.0782L34.0688 26.0171C34.8077 25.2782 34.8077 24.0691 34.0688 23.3301C33.3298 22.5912 32.1207 22.5912 31.3817 23.3301L23.3207 31.3912C22.5818 32.1301 22.5818 33.3392 23.3207 34.0782C24.0597 34.8171 25.2688 34.8171 26.0077 34.0782ZM28.3992 15.5647L24.5971 19.3668C23.8984 20.0654 23.8984 21.2208 24.5971 21.9195C25.2957 22.6181 26.4511 22.6181 27.1497 21.9195L31.0862 17.983C33.1014 15.9677 36.3124 15.4706 38.6635 17.0694C41.8342 19.219 42.1432 23.5854 39.5771 26.1515L35.4794 30.2492C34.7808 30.9478 34.7808 32.1032 35.4794 32.8018C36.178 33.5005 37.3335 33.5005 38.0321 32.8018L42.1298 28.7042C46.0528 24.7811 45.8244 18.2651 41.4446 14.6377C37.6156 11.4804 31.9057 12.0582 28.3992 15.5647Z"
-                fill="white"
-              />
-            </svg>
+              <TwitterIcon />
+            </Link>
+            <Link
+              className="p-4"
+              href="https://www.instagram.com/meta_miu/?igshid=MmIzYWVlNDQ5Yg%3D%3D"
+              target="_blank"
+            >
+              <InstagramIcon />
+            </Link>
+            <Link className="p-4" href="https://www.fellaz.io/" target="_blank">
+              <FellazIcon />
+            </Link>
           </div>
         </div>
       </nav>
+      <Drawer
+        isOpen={isDrawerOpen}
+        closeDrawer={() => {
+          setDrawerOpen(false);
+        }}
+      />
     </div>
   );
 };
