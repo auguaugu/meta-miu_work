@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "./components/navigation-bar";
 import Head from "next/head";
 import UniverseSection from "./components/main/universe-section";
+import Universe2Section from "./components/main/univers-2-section";
 import StorySection from "./components/main/story-section";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <UniverseSection />
+      <Universe2Section />
       <StorySection />
     </main>
   );

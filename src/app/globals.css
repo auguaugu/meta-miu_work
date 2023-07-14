@@ -62,6 +62,42 @@
   }
 }
 */
+/* 
+@media (min-width: 0px) and (max-width: 374px) {
+  .container {
+    min-width: 375px;
+    overflow-x: auto;
+  }
+  .c-footer {
+    min-width: 375px;
+    overflow-x: auto;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1023px) {
+  .container {
+    min-width: 1024px;
+    overflow-x: auto;
+  }
+
+  .c-footer {
+    min-width: 1024px;
+    overflow-x: auto;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .c-scroll-x {
+    min-width: 560px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1023px) {
+  .c-scroll-x {
+    min-width: 1024px;
+  }
+} */
 
 @font-face {
   font-family: "Hellix";
