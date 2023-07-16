@@ -89,7 +89,14 @@ const Drawer = ({
                   color: selected === "universe" ? "#CB00CE" : "#FFFFFF",
                 }}
               >
-                <a href="#universe">Universe</a>
+                <a
+                  href="#universe"
+                  onClick={() => {
+                    closeDrawer();
+                  }}
+                >
+                  Universe
+                </a>
               </li>
               <li
                 className="mb-8"
@@ -97,7 +104,14 @@ const Drawer = ({
                   color: selected === "story" ? "#CB00CE" : "#FFFFFF",
                 }}
               >
-                <a href="#story">Story</a>
+                <a
+                  onClick={() => {
+                    closeDrawer();
+                  }}
+                  href="#story"
+                >
+                  Story
+                </a>
               </li>
               <li
                 className=""
@@ -105,7 +119,14 @@ const Drawer = ({
                   color: selected === "features" ? "#CB00CE" : "#FFFFFF",
                 }}
               >
-                <a href="#features">Features</a>
+                <a
+                  onClick={() => {
+                    closeDrawer();
+                  }}
+                  href="#features"
+                >
+                  Features
+                </a>
               </li>
             </ul>
           </div>
@@ -142,7 +163,11 @@ const Drawer = ({
   );
 };
 
-const Navbar = () => {
+const Navbar = ({
+  selected,
+}: {
+  selected?: "universe" | "story" | "features";
+}) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -192,7 +217,7 @@ const Navbar = () => {
             <ul className="flex flex-col font-medium text-lg mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
               <li>
                 <a
-                  href="#"
+                  href="#universe"
                   className="block font-medium py-2 text-white rounded md:bg-transparent"
                   aria-current="page"
                 >
@@ -201,7 +226,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#story"
                   className="block font-medium py-2 text-white rounded md:bg-transparent"
                   aria-current="page"
                 >
@@ -210,7 +235,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#features"
                   className="block font-medium py-2 text-white rounded md:bg-transparent"
                   aria-current="page"
                 >
@@ -245,6 +270,7 @@ const Navbar = () => {
         closeDrawer={() => {
           setDrawerOpen(false);
         }}
+        selected={selected}
       />
     </div>
   );
