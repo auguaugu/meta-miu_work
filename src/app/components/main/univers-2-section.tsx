@@ -29,7 +29,6 @@ export default function Universe2Section() {
   return (
     <section
       className="text-white md:px-auto flex md:justify-center md:items-center relative pd:mb-auto pb-16"
-      ref={ref}
       style={{
         maxHeight: "1080px",
       }}
@@ -216,6 +215,7 @@ export default function Universe2Section() {
             </motion.button>
           </Link>
         </div>
+        <div ref={ref} />
       </div>
       <style jsx>{`
         section {

@@ -76,22 +76,23 @@ function calculateAngle(width: number) {
 
 function Characters() {
   const ref = useRef<HTMLDivElement | null>(null);
+  const widthRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true });
   const isMatchMd = useMediaQuery("(max-width: 767px)");
   const [angle, setAngle] = useState(160);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!widthRef.current) return;
     const handleResize = () => {
-      const divWidth = ref.current?.offsetWidth;
+      const divWidth = widthRef.current?.offsetWidth;
       setAngle(calculateAngle(divWidth!));
     };
 
     const resizeObserver = new ResizeObserver(handleResize);
-    resizeObserver.observe(ref.current!);
+    resizeObserver.observe(widthRef.current!);
 
     return () => {
-      resizeObserver.unobserve(ref.current!);
+      resizeObserver.unobserve(widthRef.current!);
     };
   }, []);
 
@@ -166,6 +167,7 @@ function Characters() {
           </MotionDiv>
         </div>
       </div>
+      <div ref={ref}></div>
       <div
         className="relative flex justify-center items-center"
         style={{
@@ -202,9 +204,7 @@ function Characters() {
           />
         )}
       </div>
-      {/* <div className="container"> */}
-        <div ref={ref}></div>
-      {/* </div> */}
+      <div ref={widthRef}></div>
     </div>
   );
 }
@@ -243,7 +243,7 @@ export default function StorySection() {
         overflow: "hidden",
       }}
     >
-      <div className="container text-medium" ref={ref}>
+      <div className="container text-medium">
         <motion.h1
           className="font-medium lg:text-6xl md:text-4xl sm:text-2xl text-2xl md:mb-6 text-white"
           initial="hidden"
@@ -266,8 +266,30 @@ export default function StorySection() {
         >
           META MIU
         </motion.h1>
+        <div ref={ref} />
       </div>
       <Characters />
+      <div className="container md:grid md:grid-cols-12 relative md:bottom-52 bottom-40">
+        <div className="col-span-5" />
+        {/* </div> */}
+        <p className="text-left col-span-7 xl:text-2xl lg:text-xl md:text-lg text-sm font-regular">
+          On the morning of high school graduation, Miu wakes up and finds out
+          she had a pair of cat ears and tail. <br />
+          <br />
+          Because of her different appearance, Miu had no choice but to stay in
+          her room in the day and only go out at night.
+          <br />
+          <br />
+          Then one day, she encounters a wise sorcerer named Felix, who told her
+          a secret way to return to normal human body. With a strong desire to
+          return to her normal life, Miu visits Felix and he promise Miu that
+          she will return to her human body only if she completes all of his
+          mission.
+          <br />
+          <br />
+          Miu asks, so what’s the first mission? …
+        </p>
+      </div>
     </section>
   );
 }
