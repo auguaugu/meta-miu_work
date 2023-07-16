@@ -148,10 +148,11 @@ export default function Universe2Section() {
         />
         <div className="absolute top-0 left-0 bottom-0 w-full h-full flex flex-col justify-center items-center">
           <motion.h1
-            className="font-bold text-9xl mb-10 text-center"
+            className="font-bold lg:text-9xl md:text-7xl sm:text-4xl text-3xl mb-10 text-center"
+            // className="font-bold lg:text-9xl md:text-7xl sm:text-4xl text-3xl mb-10 inline-block"
             style={{
               background:
-                "linear-gradient(90deg, #FF87A4, rgba(189, 0, 255, 0.5))",
+                "linear-gradient(90deg, #ABDEE5, rgba(223, 64, 122, 0.65))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
