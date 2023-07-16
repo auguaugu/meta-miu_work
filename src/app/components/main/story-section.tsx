@@ -11,11 +11,6 @@ const fadeUpVariant = {
   show: { opacity: 1, y: 0, transition: { duration: 1.0, ease: "easeOut" } },
 };
 
-const heightVariant = {
-  hidden: { height: 0 },
-  show: { height: "360px", transition: { duration: 1.0, ease: "easeIn" } },
-};
-
 function MotionDiv({
   children,
   isInView,
@@ -211,8 +206,6 @@ function Characters() {
 
 export default function StorySection() {
   const controls = useAnimation();
-  const controls2 = useAnimation();
-  const heightControl = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, { freezeOnceVisible: true });
   const inView = !!entry?.isIntersecting;
@@ -220,17 +213,8 @@ export default function StorySection() {
   useEffect(() => {
     if (inView) {
       controls.start("show");
-      setTimeout(() => {
-        controls2.start("show");
-      }, 200);
     }
-  }, [controls, controls2, inView]);
-
-  useEffect(() => {
-    if (inView) {
-      heightControl.start("show");
-    }
-  }, [heightControl, inView]);
+  }, [controls, inView]);
 
   return (
     <section
@@ -272,7 +256,22 @@ export default function StorySection() {
       <div className="container md:grid md:grid-cols-12 relative md:bottom-52 bottom-40">
         <div className="col-span-5" />
         {/* </div> */}
-        <p className="text-left col-span-7 xl:text-2xl lg:text-xl md:text-lg text-sm font-regular">
+        <motion.p
+          className="text-left col-span-7 xl:text-2xl lg:text-xl md:text-lg text-sm font-regular"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          animate={{
+            opacity: inView ? 1 : 0,
+            y: inView ? 0 : 40,
+          }}
+          transition={{
+            delay: 1.4,
+            duration: 1.0,
+            ease: "easeOut",
+          }}
+        >
           On the morning of high school graduation, Miu wakes up and finds out
           she had a pair of cat ears and tail. <br />
           <br />
@@ -288,7 +287,7 @@ export default function StorySection() {
           <br />
           <br />
           Miu asks, so what’s the first mission? …
-        </p>
+        </motion.p>
       </div>
     </section>
   );

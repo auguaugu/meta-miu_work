@@ -4,6 +4,8 @@ import Head from "next/head";
 import UniverseSection from "./components/main/universe-section";
 import Universe2Section from "./components/main/univers-2-section";
 import StorySection from "./components/main/story-section";
+import AboutMetaMiuSection from "./components/main/about-meta-miu-section";
+import KeyPointsSection from "./components/main/key-points-section";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <UniverseSection />
       <Universe2Section />
       <StorySection />
+      <AboutMetaMiuSection />
+      <KeyPointsSection />
     </main>
   );
 }

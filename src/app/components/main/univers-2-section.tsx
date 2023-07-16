@@ -29,9 +29,11 @@ export default function Universe2Section() {
   return (
     <section
       className="text-white md:px-auto flex md:justify-center md:items-center relative pd:mb-auto pb-16"
-      style={{
-        maxHeight: "1080px",
-      }}
+      style={
+        {
+          // maxHeight: "1080px",
+        }
+      }
     >
       {/* Mobile View */}
       <div className="md:hidden block">
@@ -127,6 +129,7 @@ export default function Universe2Section() {
           />
         </div>
       </div>
+      <div ref={ref} />
       {/* Desktop View */}
       <div className="md:block hidden">
         <Image
@@ -187,7 +190,6 @@ export default function Universe2Section() {
             a community-centered metaverse idol project.
           </motion.p>
           <Link href="https://fellaz.io" target="_blank">
-            {/* GPT. 이 버튼은 fade 애니메이션을 줄 수 있을까? fadeUpVariant.fade에 내가 만들어놨어.*/}
             <motion.button
               type="button"
               className="relative font-bold text-lg z-10 text-gray-900 flex items-center gap-2 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 rounded-full text-sm px-6 py-1 mb-2"
@@ -215,7 +217,6 @@ export default function Universe2Section() {
             </motion.button>
           </Link>
         </div>
-        <div ref={ref} />
       </div>
       <style jsx>{`
         section {

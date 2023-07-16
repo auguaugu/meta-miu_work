@@ -123,8 +123,7 @@
   font-family: "Hellix";
   font-weight: 700;
   font-display: swap;
-  src: local("Hellix-Bold"),
-    url("/assets/fonts/Hellix-Bold.ttf") format("ttf"),
+  src: local("Hellix-Bold"), url("/assets/fonts/Hellix-Bold.ttf") format("ttf"),
     url("/assets/fonts/Hellix-Bold.woff") format("woff"),
     url("/assets/fonts/Hellix-Bold.woff2") format("woff2");
 }
@@ -183,8 +182,7 @@
   font-family: "Hellix";
   font-weight: 100;
   font-display: swap;
-  src: local("Hellix-Thin"),
-    url("/assets/fonts/Hellix-Thin.ttf") format("ttf"),
+  src: local("Hellix-Thin"), url("/assets/fonts/Hellix-Thin.ttf") format("ttf"),
     url("/assets/fonts/Hellix-Thin.woff") format("woff"),
     url("/assets/fonts/Hellix-Thin.woff2") format("woff2");
 }
@@ -235,9 +233,9 @@ center,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
+/* ol, */
+/* ul, */
+/* li, */
 fieldset,
 form,
 label,
@@ -301,10 +299,10 @@ section {
 body {
   line-height: 1;
 }
-ol,
+/* ol,
 ul {
   list-style: none;
-}
+} */
 blockquote,
 q {
   quotes: none;
@@ -313,7 +311,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -321,14 +319,14 @@ table {
   border-spacing: 0;
 }
 
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
 /* 파이어폭스에서의 초기화 방법 */
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
