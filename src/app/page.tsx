@@ -9,6 +9,7 @@ import AboutMetaMiuSection from "./components/main/about-meta-miu-section";
 import KeyPointsSection from "./components/main/key-points-section";
 import FeaturesSection from "./components/main/features-section";
 import React, { useEffect, useRef } from "react";
+import Footer from "./components/footer";
 
 export default function Home() {
   const [scrollLoc, setScrollLoc] = React.useState<
@@ -62,6 +63,7 @@ export default function Home() {
       <div id="features" ref={featuresRef} className="pt-20">
         <FeaturesSection />
       </div>
+      <Footer />
     </main>
   );
 }
