@@ -6,6 +6,7 @@ import Universe2Section from "./components/main/univers-2-section";
 import StorySection from "./components/main/story-section";
 import AboutMetaMiuSection from "./components/main/about-meta-miu-section";
 import KeyPointsSection from "./components/main/key-points-section";
+import FeaturesSection from "./components/main/features-section";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <StorySection />
       <AboutMetaMiuSection />
       <KeyPointsSection />
+      <FeaturesSection />
     </main>
   );
 }
