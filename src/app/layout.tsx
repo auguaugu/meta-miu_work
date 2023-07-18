@@ -9,6 +9,10 @@ import Head from "next/head";
 export const metadata: Metadata = {
   title: "Meta Miu",
   description: "One & Only Idol project",
+  openGraph: {
+    title: "Meta Miu",
+    description: "One & Only Idol project",
+  },
 };
 
 export default function RootLayout({
