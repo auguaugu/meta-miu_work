@@ -57,7 +57,7 @@ export default function Universe2Section() {
             animate={controls2}
             variants={fadeUpVariant}
           >
-            The universe that is built with IPs processed by Fellaz.
+            The metaverse built on Fellaz-owned IPs.
           </motion.h2>
           <motion.p
             className="text-sm mb-10"
@@ -68,13 +68,14 @@ export default function Universe2Section() {
             animate={controls2}
             variants={fadeUpVariant}
           >
-            Fellaz aims members to expand their entertainment experience beyond
-            the real world and into the metaverse. Fellaz universe and the IPs
-            within it work as a link that connects the real world with the
-            metaverse. <br />
+            Fellaz aims to enhance the entertainment experience for its members,
+            extending the experience beyond the real world and into the
+            metaverse. Fellaz Universe is the gateway to the new world of
+            entertainment experience.
             <br />
-            The first project to introduce of the Fellaz universe is ‘Meta Miu’,
-            a community-centered metaverse idol project.
+            <br />
+            The first project to launch in Fellaz Universe is ‘Meta Miu’, a
+            community-driven virtual idol project.
           </motion.p>
           <Link href="https://fellaz.io" target="_blank">
             {/* GPT. 이 버튼은 fade 애니메이션을 줄 수 있을까? fadeUpVariant.fade에 내가 만들어놨어.*/}
@@ -170,7 +171,7 @@ export default function Universe2Section() {
             animate={controls2}
             variants={fadeUpVariant}
           >
-            The universe that is built with IPs processed by Fellaz.
+            The metaverse built on Fellaz-owned IPs.
           </motion.h2>
           <motion.p
             className="text-center text-lg mb-16"
@@ -181,13 +182,14 @@ export default function Universe2Section() {
             animate={controls2}
             variants={fadeUpVariant}
           >
-            Fellaz aims members to expand their entertainment experience beyond
-            the real world and into the metaverse. Fellaz universe and the IPs
-            within it work as a link that connects the real world with the
-            metaverse. <br />
+            Fellaz aims to enhance the entertainment experience for its members,
+            extending the experience beyond the real world and into the
+            metaverse. Fellaz Universe is the gateway to the new world of
+            entertainment experience.
             <br />
-            The first project to introduce of the Fellaz universe is ‘Meta Miu’,
-            a community-centered metaverse idol project.
+            <br />
+            The first project to launch in Fellaz Universe is ‘Meta Miu’, a
+            community-driven virtual idol project.
           </motion.p>
           <Link href="https://fellaz.io" target="_blank">
             <motion.button

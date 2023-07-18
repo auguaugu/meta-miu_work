@@ -45,8 +45,8 @@ export default function FeaturesSection() {
                   listStyleType: "disc",
                 }}
               >
-                The artwork of the Meta MIU project NFTs have quality that
-                stimulates followers to hold and keep on collecting.
+                The quality of the artwork for Meta Miu-related NFTs will be
+                captivating and worth holding.
               </li>
               <li
                 className="md:mb-0 mb-4"
@@ -62,7 +62,7 @@ export default function FeaturesSection() {
                   listStyleType: "disc",
                 }}
               >
-                Exclusive rewards will be given to the holders occasionally.
+                Exclusive rewards will be given to the holders.
               </li>
             </ul>
           </div>
@@ -89,7 +89,8 @@ export default function FeaturesSection() {
                   listStyleType: "disc",
                 }}
               >
-                Synthesize NFTs to earn Miu’s next episode NFTs.
+                Holders can combine NFTs to receive the next episode of NFTs
+                collectibles.
               </li>
               <li
                 className="md:mb-0 mb-4"
@@ -97,16 +98,7 @@ export default function FeaturesSection() {
                   listStyleType: "disc",
                 }}
               >
-                Distinctive artworks with high quality will be provided
-                according to each episode.
-              </li>
-              <li
-                className="md:mb-0 mb-4"
-                style={{
-                  listStyleType: "disc",
-                }}
-              >
-                Depending on the NFT, rewards will be provided occasionally.
+                Depending on the type of NFT held, rewards will be provided.
               </li>
             </ul>
           </div>
@@ -133,8 +125,7 @@ export default function FeaturesSection() {
                   listStyleType: "disc",
                 }}
               >
-                Participate in the community to make Miu into an idol that you
-                want her to be.
+                Participate in the community to become a co-producer for Miu.
               </li>
               <li
                 className="md:mb-0 mb-4"
@@ -142,8 +133,8 @@ export default function FeaturesSection() {
                   listStyleType: "disc",
                 }}
               >
-                A voting system will be available for holders to give opinions
-                and make decisions for the project.
+                Holders to give opinions and make decisions for the project via
+                the voting system.
               </li>
             </ul>
           </div>

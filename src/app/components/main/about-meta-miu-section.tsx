@@ -71,15 +71,13 @@ export default function AboutMetaMiuSection() {
           delay={0.2}
         >
           <h2 className="text-lg sm:text-xl font-semibold mb-8">
-            The 1st project of the Fellaz Universe.
+            The Prototype for Fellaz Universe
           </h2>
           <p className="text-sm sm:text-lg">
-            Fellaz Pass holders can join the journey of Miu’s idol debut with
-            Felix(BAYC#8169) who is the chief producer of the Fellaz universe.
-            <br />
-            <br />
-            Holders are not just a supporter but also a sub-producer for her to
-            become a successful idol.
+            Fellaz Pass holders can join Miu’s journey of debuting as a virtual
+            idol along with Felix(BAYC#8169), who will lead her as the Chief
+            Producer of Fellaz Universe. The pass holders will participate as
+            co-producers in producing Miu into her stardom.
           </p>
         </MotionDiv>
       </div>
@@ -102,15 +100,16 @@ export default function AboutMetaMiuSection() {
         >
           <h1 className="text-6xl mb-10 font-bold">About META MIU</h1>
           <h2 className="text-4xl font-bold mb-10">
-            The 1st project of the Fellaz Universe.
+            The Fellaz community will drive the Meta Miu project.
           </h2>
           <p className="text-lg">
-            Fellaz Pass holders can join the journey of Miu’s idol debut with
-            Felix(BAYC#8169) who is the chief producer of the Fellaz universe.
+            Fellaz Pass holders are the project's initial core members, and
+            their opinions will be reflected.
             <br />
             <br />
-            Holders are not just a supporter but also a sub-producer for her to
-            become a successful idol.
+            Holders will have the opportunity to participate in more and more
+            decision-making for Miu, such as choosing her debut outfit and other
+            activities that will lead Miu into her stardom.
           </p>
         </MotionDiv>
       </div>

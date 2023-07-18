@@ -272,21 +272,25 @@ export default function StorySection() {
             ease: "easeOut",
           }}
         >
-          On the morning of high school graduation, Miu wakes up and finds out
-          she had a pair of cat ears and tail. <br />
-          <br />
-          Because of her different appearance, Miu had no choice but to stay in
-          her room in the day and only go out at night.
+          On the morning of her high school graduation day, Miu wakes up to
+          discover that she has grown a pair of cat ears and a tail.
           <br />
           <br />
-          Then one day, she encounters a wise sorcerer named Felix, who told her
-          a secret way to return to normal human body. With a strong desire to
-          return to her normal life, Miu visits Felix and he promise Miu that
-          she will return to her human body only if she completes all of his
-          mission.
+          She had no choice but to miss her graduation. And from then on, she
+          could only leave her house at night to hide her newly grown ears and
+          tail.
           <br />
           <br />
-          Miu asks, so what’s the first mission? …
+          Then one day, she encounters a wise sorcerer named Felix, who knows
+          how to revert her situation. But at the cost of having to complete a
+          set of missions.
+          <br />
+          <br />
+          With a strong desire to return to her normal life, Miu visits Felix to
+          express her commitment to take on the challenges he arranges.
+          <br />
+          <br />
+          Miu asks, “Felix, tell me what my first mission is!”
         </motion.p>
       </div>
     </section>
