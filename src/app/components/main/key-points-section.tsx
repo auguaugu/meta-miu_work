@@ -58,7 +58,7 @@ export default function KeyPointsSection() {
           </div>
           <div className="col-span-6 mb-10">
             <Image
-              src="/assets/images/about-meta-miu.png"
+              src="/assets/images/key-points.png"
               width={609}
               height={910}
               alt="about meta miu"
