@@ -1,6 +1,44 @@
 import Image from "next/image";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef } from "react";
+
+function MotionDiv({
+  children,
+  isInView,
+  delay,
+  className,
+  initPos = "translateX(-40px)",
+  lastPos = "translateX(0)",
+}: {
+  children: React.ReactNode;
+  isInView: boolean;
+  delay?: number;
+  className?: string;
+  initPos?: string;
+  lastPos?: string;
+}) {
+  return (
+    <motion.div
+      className={className}
+      animate={{
+        transform: isInView ? lastPos : initPos,
+        opacity: isInView ? 1 : 0,
+        transition: { duration: 0.4, ease: "easeIn", delay: delay || 0 },
+      }}
+      initial={{
+        transform: initPos,
+        opacity: 0,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function AboutMetaMiuSection() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section
       className="text-white md:px-auto relative"
@@ -12,7 +50,7 @@ export default function AboutMetaMiuSection() {
       <div className="bg-black h-32" />
       {/* Mobile */}
       <div className="container relative bottom-16 block md:hidden">
-        <div className="grid grid-cols-12">
+        <MotionDiv isInView={isInView} className="grid grid-cols-12">
           <div className="col-span-6 mb-10">
             <Image
               src="/assets/images/about-meta-miu.png"
@@ -25,8 +63,13 @@ export default function AboutMetaMiuSection() {
             <h1 className="font-bold">About</h1>
             <h1 className="font-bold">META MIU</h1>
           </div>
-        </div>
-        <div>
+        </MotionDiv>
+        <MotionDiv
+          isInView={isInView}
+          initPos="translateY(40px)"
+          lastPos="translateY(0)"
+          delay={0.2}
+        >
           <h2 className="text-lg sm:text-xl font-semibold mb-8">
             The 1st project of the Fellaz Universe.
           </h2>
@@ -38,19 +81,25 @@ export default function AboutMetaMiuSection() {
             Holders are not just a supporter but also a sub-producer for her to
             become a successful idol.
           </p>
-        </div>
+        </MotionDiv>
       </div>
       {/* Desktop */}
       <div className="hidden md:grid container grid grid-cols-12 relative bottom-32">
-        <div className="col-span-6">
+        <MotionDiv isInView={isInView} className="col-span-6">
           <Image
             src="/assets/images/about-meta-miu.png"
             width={609}
             height={910}
             alt="about meta miu"
           />
-        </div>
-        <div className="col-span-6 flex flex-col justify-center">
+        </MotionDiv>
+        <MotionDiv
+          isInView={isInView}
+          className="col-span-6 flex flex-col justify-center"
+          initPos="translateY(40px)"
+          lastPos="translateY(0)"
+          delay={0.2}
+        >
           <h1 className="text-6xl mb-10 font-bold">About META MIU</h1>
           <h2 className="text-4xl font-bold mb-10">
             The 1st project of the Fellaz Universe.
@@ -63,8 +112,9 @@ export default function AboutMetaMiuSection() {
             Holders are not just a supporter but also a sub-producer for her to
             become a successful idol.
           </p>
-        </div>
+        </MotionDiv>
       </div>
+      <div ref={ref} />
     </section>
   );
 }
