@@ -10,6 +10,7 @@ import KeyPointsSection from "./components/main/key-points-section";
 import FeaturesSection from "./components/main/features-section";
 import React, { useEffect, useRef } from "react";
 import Footer from "./components/footer";
+import { Metadata } from "next";
 
 export default function Home() {
   const [scrollLoc, setScrollLoc] = React.useState<
@@ -49,6 +50,10 @@ export default function Home() {
           name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content={"Meta Miu"} />
+        <meta property="og:description" content={"One & Only Idol project"} />
+        <title>Meta Miu</title>
       </Head>
       <Navbar selected={scrollLoc} />
       <div id="universe" ref={universeRef} className="pt-10">
