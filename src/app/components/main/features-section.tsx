@@ -118,7 +118,7 @@ export default function FeaturesSection() {
             className="col-span-1 text-black py-20 px-10 md:pt-20 pt-10"
           >
             <Image
-              src="/assets/images/synthesis-icon.png"
+              src="/assets/images/participant-icon.png"
               width={64}
               height={64}
               alt="synthesis"

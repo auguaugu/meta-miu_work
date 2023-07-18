@@ -104,7 +104,7 @@ export default function AboutMetaMiuSection() {
           <h2 className="text-4xl font-bold mb-10">
             The 1st project of the Fellaz Universe.
           </h2>
-          <p className="text-2xl">
+          <p className="text-lg">
             Fellaz Pass holders can join the journey of Miu’s idol debut with
             Felix(BAYC#8169) who is the chief producer of the Fellaz universe.
             <br />

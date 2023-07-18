@@ -72,7 +72,7 @@ export default function KeyPointsSection() {
           lastPos="translateY(0)"
           delay={0.2}
         >
-          <ol className="text-sm sm:text-xl ml-6">
+          <ol className="text-sm sm:text-lg ml-6">
             <li
               className="mb-5"
               style={{
@@ -113,7 +113,7 @@ export default function KeyPointsSection() {
           delay={0.2}
         >
           <h1 className="text-6xl mb-10 font-bold">Key Points</h1>
-          <ol className="text-2xl ml-6">
+          <ol className="text-lg ml-6">
             <li
               className="mb-5"
               style={{

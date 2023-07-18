@@ -173,7 +173,7 @@ export default function Universe2Section() {
             The universe that is built with IPs processed by Fellaz.
           </motion.h2>
           <motion.p
-            className="text-center text-2xl mb-16"
+            className="text-center text-lg mb-16"
             style={{
               maxWidth: "720px",
             }}

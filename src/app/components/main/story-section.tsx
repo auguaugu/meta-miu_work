@@ -257,7 +257,7 @@ export default function StorySection() {
         <div className="col-span-5" />
         {/* </div> */}
         <motion.p
-          className="text-left col-span-7 xl:text-2xl lg:text-xl md:text-lg text-sm font-regular"
+          className="text-left col-span-7 md:text-lg text-sm font-regular"
           initial={{
             opacity: 0,
             y: 40,
