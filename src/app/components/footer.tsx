@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="flex md:flex-row gap-8">
         <Link
           className=""
-          href="https://twitter.com/Meta_Miu_?s=20"
+          href="https://twitter.com/I_am_Miu_?s=20"
           target="_blank"
         >
           <Image
