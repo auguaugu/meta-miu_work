@@ -21,7 +21,7 @@ export default function Footer() {
             color: "#CACACA",
           }}
         >
-          © Innocus Pte. Ltd. All rights reserved.
+          Fellaz All rights reserved.
         </h6>
         <h6 className="text-white">
           <Link href="mailto:social@fellaz.io">Contact</Link>
